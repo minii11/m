@@ -45,7 +45,8 @@
             margin: 10px 0; /* Small margin for spacing */
             position: absolute; /* Position text between images */
             top: 50%; /* Center vertically */
-            transform: translateY(-50%); /* Adjust for perfect centering */
+            left: 50%; /* Center horizontally */
+            transform: translate(-50%, -50%); /* Adjust for perfect centering */
             z-index: 3; /* Ensure text is above images */
         }
         .additional-text {
@@ -107,13 +108,13 @@
             <img src="image10.jpg" alt="Passport Image">
         </div>
         <div class="image-row">
-            <div class="larger-image" style="position: relative;"> <!-- Yellow outline retained -->
+            <div class="larger-image">
                 <img src="image21.jpg" alt="Image 1">
             </div>
-            <div class="text-container">کونسلر راحیل شفیق</div> <!-- Prominent text -->
-            <div class="larger-image" style="position: relative;"> 
+            <div class="larger-image">
                 <img src="image41.jpg" alt="Image 2">
             </div>
+            <div class="text-container">کونسلر راحیل شفیق</div> <!-- Prominent text positioned in the middle -->
         </div>
         <img src="imageu.jpg" alt="Under Image" class="under-image">
         <div class="bottom-images">
