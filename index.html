@@ -19,7 +19,6 @@
         .image-row {
             display: flex;
             justify-content: center;
-            gap: 20px; /* Space between images */
             margin-bottom: 20px;
             flex-wrap: wrap; /* Allow wrapping for mobile */
         }
@@ -29,31 +28,25 @@
             min-width: 120px; /* Minimum width for responsiveness */
         }
         .passport-image {
-            width: 160px; /* Increased size for passport images */
+            width: 200px; /* Increased size for passport image */
             height: auto; /* Maintain aspect ratio */
-            margin-bottom: 10px; /* Space between passport and larger image */
-        }
-        .larger-image {
-            width: 50%; /* Responsive size for larger images */
-            max-width: 240px; /* Maximum size for larger images */
-            height: auto;
-            border-radius: 10px; /* Optional rounded corners */
+            margin-bottom: 10px; /* Space below the image */
             position: relative; /* For the outline effect */
         }
-        .larger-image::before {
+        .passport-image::before {
             content: '';
             position: absolute;
             top: -5px;
             left: -5px;
             right: -5px;
             bottom: -5px;
-            border: 5px solid yellow; /* Yellow outline */
+            border: 5px solid white; /* White outline */
             border-radius: 15px; /* Match border radius */
-            opacity: 0.6;
+            opacity: 0.8;
             animation: shimmer 1.5s infinite; /* Shimmering effect */
             z-index: 1; /* Place the outline behind the image */
         }
-        .larger-image img {
+        .passport-image img {
             border-radius: 10px; /* Ensure image corners are rounded */
             position: relative; /* For stacking context */
             z-index: 2; /* Place the image above the outline */
@@ -61,16 +54,23 @@
             height: auto; /* Maintain aspect ratio */
         }
         @keyframes shimmer {
-            0% { box-shadow: 0 0 0px yellow; }
-            50% { box-shadow: 0 0 8px yellow; }
-            100% { box-shadow: 0 0 0px yellow; }
+            0% { box-shadow: 0 0 0px white; }
+            50% { box-shadow: 0 0 8px white; }
+            100% { box-shadow: 0 0 0px white; }
+        }
+        .under-image {
+            width: 80%; /* Width of the under image */
+            margin: 20px auto; /* Center image */
+            border: 5px solid black; /* Black border for the under image */
+            border-radius: 10px; /* Rounded corners */
+            position: relative; /* For stacking context */
         }
         .text-container {
             color: yellow; /* Text color */
             font-size: 40px; /* Increased font size */
             font-weight: bold;
             padding: 20px;
-            text-shadow: 0 0 20px white; /* Increased glow effect */
+            text-shadow: 0 0 30px white; /* Enhanced glow effect */
             margin: 20px;
             display: inline-block;
         }
@@ -82,6 +82,23 @@
         .bottom-images img {
             width: 45%; /* Adjust size as needed */
             height: auto;
+            border: 3px solid darkred; /* Dark red outline */
+            border-radius: 10px; /* Rounded corners */
+            position: relative; /* For stacking context */
+        }
+        .larger-image {
+            width: 50%; /* Responsive size for larger images */
+            max-width: 240px; /* Maximum size for larger images */
+            height: auto;
+            border-radius: 10px; /* Optional rounded corners */
+            position: relative; /* For the outline effect */
+        }
+        .larger-image img {
+            border-radius: 10px; /* Ensure image corners are rounded */
+            position: relative; /* For stacking context */
+            z-index: 2; /* Place the image above the outline */
+            width: 100%; /* Make the image fill the container */
+            height: auto; /* Maintain aspect ratio */
         }
     </style>
 </head>
@@ -89,10 +106,9 @@
     <div class="banner">
         <div class="image-row">
             <div class="image-container">
-                <img src="image10.jpg" alt="Passport Image 1" class="passport-image">
-            </div>
-            <div class="image-container">
-                <img src="image10.jpg" alt="Passport Image 2" class="passport-image">
+                <div class="passport-image">
+                    <img src="image10.jpg" alt="Passport Image">
+                </div>
             </div>
         </div>
         <div class="image-row">
@@ -103,7 +119,7 @@
                 <img src="image41.jpg" alt="Image 2">
             </div>
         </div>
-        <img src="imageu.jpg" alt="Under Image" width="80%" style="margin: 20px auto; display: block;">
+        <img src="imageu.jpg" alt="Under Image" class="under-image">
         <div class="text-container">
             کونسلر راحیل شفیق<br>
             وارڈ 2 میونسپل کارپوریشن میرپور
