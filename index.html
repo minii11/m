@@ -17,7 +17,7 @@
             text-align: center;
         }
         .passport-image {
-            width: 180px; /* Further decreased width for passport image */
+            width: 180px; /* Width for passport image */
             height: auto; /* Auto height for full visibility */
             margin: 0 auto 20px; /* Center with margin */
             position: relative; /* For the outline effect */
@@ -33,15 +33,15 @@
             border-radius: 50%; /* Match the border radius */
         }
         .under-image {
-            width: 80%; /* Width of the under image */
+            width: 100%; /* Full width for responsive design */
+            max-width: 80%; /* Limit maximum width */
             margin: 20px auto; /* Center image */
-            border: 5px solid black; /* Black border for the under image */
             border-radius: 10px; /* Rounded corners */
             box-shadow: 0 0 30px black; /* Increased shining black outline */
         }
         .text-container {
             color: yellow; /* Text color */
-            font-size: 40px; /* Increased font size */
+            font-size: 48px; /* Increased font size */
             font-weight: bold;
             padding: 20px;
             text-shadow: 0 0 30px white, 0 0 50px darkgreen; /* Enhanced glow effect with dark green */
@@ -55,27 +55,15 @@
             flex-wrap: wrap; /* Allow wrapping for mobile */
         }
         .larger-image {
-            width: 50%; /* Responsive size for larger images */
-            max-width: 240px; /* Maximum size for larger images */
-            margin-left: 20px; /* Added margin for gap */
+            width: 100%; /* Make images take full width on mobile */
+            max-width: 300px; /* Maximum size for larger images */
+            margin: 10px; /* Margin for spacing */
             position: relative; /* For the outline effect */
         }
         .larger-image img {
             width: 100%; /* Make the image fill the container */
             height: auto; /* Maintain aspect ratio */
             border-radius: 10px; /* Optional rounded corners */
-        }
-        .larger-image::before {
-            content: '';
-            position: absolute;
-            top: -5px;
-            left: -5px;
-            right: -5px;
-            bottom: -5px;
-            border: 3px solid yellow; /* Yellow outline */
-            border-radius: 10px; /* Match rounded corners */
-            z-index: 1; /* Place the outline behind the image */
-            box-shadow: 0 0 30px yellow; /* Increased shining yellow outline */
         }
         .bottom-images {
             display: flex;
@@ -86,7 +74,6 @@
         .bottom-images img {
             width: 45%; /* Adjust size as needed */
             height: auto;
-            border: 3px solid darkred; /* Dark red outline */
             border-radius: 10px; /* Rounded corners */
             position: relative; /* For stacking context */
             margin-right: 10px; /* Gap between images */
@@ -103,7 +90,7 @@
             <img src="image10.jpg" alt="Passport Image">
         </div>
         <div class="image-row">
-            <div class="larger-image" style="margin-right: 20px;"> <!-- Added margin for gap -->
+            <div class="larger-image" style="margin-right: 20px;"> <!-- Removed border -->
                 <img src="image21.jpg" alt="Image 1">
             </div>
             <div class="larger-image">
