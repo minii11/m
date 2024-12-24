@@ -38,11 +38,15 @@
             box-shadow: 0 0 30px black; /* Increased shining black outline */
         }
         .text-container {
-            font-size: 48px; /* Increased font size for prominence */
+            font-size: 64px; /* Increased font size for prominence */
             font-weight: bold;
             color: white; /* Text color */
             text-shadow: 2px 2px 0 black; /* Black outline effect */
             margin: 10px 0; /* Small margin for spacing */
+            position: absolute; /* Position text between images */
+            top: 50%; /* Center vertically */
+            transform: translateY(-50%); /* Adjust for perfect centering */
+            z-index: 3; /* Ensure text is above images */
         }
         .additional-text {
             font-size: 24px; /* Smaller size for additional text */
@@ -53,11 +57,11 @@
             display: flex;
             justify-content: center;
             margin-bottom: 20px;
-            flex-wrap: wrap; /* Allow wrapping for mobile */
+            position: relative; /* For positioning text */
         }
         .larger-image {
             width: 100%; /* Make images take full width on mobile */
-            max-width: 400px; /* Increased size for larger images */
+            max-width: 450px; /* Increased size for larger images */
             margin: 10px; /* Margin for spacing */
             position: relative; /* For the outline effect */
         }
@@ -106,6 +110,7 @@
             <div class="larger-image" style="margin-right: 20px;"> <!-- Yellow outline retained -->
                 <img src="image21.jpg" alt="Image 1">
             </div>
+            <div class="text-container">کونسلر راحیل شفیق</div> <!-- Prominent text -->
             <div class="larger-image">
                 <img src="image41.jpg" alt="Image 2">
             </div>
@@ -115,7 +120,6 @@
             <img src="images.jpg" alt="Bottom Left Image">
             <img src="imager.jpg" alt="Bottom Right Image">
         </div>
-        <div class="text-container">کونسلر راحیل شفیق</div> <!-- Prominent text -->
         <div class="additional-text">وارڈ 2 میونسپل کارپوریشن میرپور</div> <!-- Styled additional text -->
     </div>
 </body>
