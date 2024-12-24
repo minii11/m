@@ -38,13 +38,16 @@
             box-shadow: 0 0 30px black; /* Increased shining black outline */
         }
         .text-container {
-            color: yellow; /* Text color */
-            font-size: 56px; /* Increased font size for prominence */
+            font-size: 48px; /* Increased font size for prominence */
             font-weight: bold;
-            padding: 20px;
-            text-shadow: 0 0 30px white, 0 0 50px darkgreen; /* Enhanced glow effect with dark green */
-            margin: 20px;
-            display: inline-block;
+            color: white; /* Text color */
+            text-shadow: 2px 2px 0 black; /* Black outline effect */
+            margin: 10px 0; /* Small margin for spacing */
+        }
+        .additional-text {
+            font-size: 24px; /* Smaller size for additional text */
+            color: yellow; /* Original style */
+            text-shadow: 0 0 30px white, 0 0 50px darkgreen; /* Glow effect */
         }
         .image-row {
             display: flex;
@@ -80,6 +83,7 @@
             justify-content: space-between;
             flex-wrap: wrap; /* Allow wrapping for mobile */
             margin-top: 20px; /* Space between text and bottom images */
+            position: relative; /* For positioning text */
         }
         .bottom-images img {
             width: 20%; /* Further decreased size for bottom images */
@@ -107,14 +111,12 @@
             </div>
         </div>
         <img src="imageu.jpg" alt="Under Image" class="under-image">
-        <div class="text-container">
-            کونسلر راحیل شفیق<br>
-            وارڈ 2 میونسپل کارپوریشن میرپور
-        </div>
         <div class="bottom-images">
             <img src="images.jpg" alt="Bottom Left Image">
             <img src="imager.jpg" alt="Bottom Right Image">
         </div>
+        <div class="text-container">کونسلر راحیل شفیق</div> <!-- Prominent text -->
+        <div class="additional-text">وارڈ 2 میونسپل کارپوریشن میرپور</div> <!-- Styled additional text -->
     </div>
 </body>
 </html>
