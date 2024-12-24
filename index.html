@@ -16,12 +16,6 @@
             padding: 20px;
             text-align: center;
         }
-        .image-row {
-            display: flex;
-            justify-content: center;
-            margin-bottom: 20px;
-            flex-wrap: wrap; /* Allow wrapping for mobile */
-        }
         .passport-image {
             width: 250px; /* Width for passport image */
             height: 150px; /* Height for horizontal oval shape */
@@ -29,31 +23,12 @@
             border-radius: 75px; /* Create an oval shape */
             overflow: hidden; /* Clip the image to the oval shape */
             position: relative; /* For the outline effect */
-        }
-        .passport-image::before {
-            content: '';
-            position: absolute;
-            top: -5px; /* White outline */
-            left: -5px; /* White outline */
-            right: -5px; /* White outline */
-            bottom: -5px; /* White outline */
-            border: 5px solid white; /* White outline */
-            border-radius: 75px; /* Match oval shape */
-            opacity: 0.8;
-            animation: shimmer 1.5s infinite; /* Shimmering effect */
-            z-index: 1; /* Place the outline behind the image */
+            box-shadow: 0 0 15px white; /* Shining white outline */
         }
         .passport-image img {
             width: 100%; /* Make the image fill the container */
             height: auto; /* Maintain aspect ratio */
             border-radius: 75px; /* Oval shape for the image itself */
-            position: relative; /* Ensure image is above the outline */
-            z-index: 2; /* Place the image above the outline */
-        }
-        @keyframes shimmer {
-            0% { box-shadow: 0 0 0px white; }
-            50% { box-shadow: 0 0 8px white; }
-            100% { box-shadow: 0 0 0px white; }
         }
         .under-image {
             width: 80%; /* Width of the under image */
@@ -97,7 +72,6 @@
         .larger-image img {
             border-radius: 10px; /* Ensure image corners are rounded */
             position: relative; /* For stacking context */
-            z-index: 2; /* Place the image above the outline */
             width: 100%; /* Make the image fill the container */
             height: auto; /* Maintain aspect ratio */
         }
@@ -116,10 +90,8 @@
 </head>
 <body>
     <div class="banner">
-        <div class="image-row">
-            <div class="passport-image">
-                <img src="image10.jpg" alt="Passport Image">
-            </div>
+        <div class="passport-image">
+            <img src="image10.jpg" alt="Passport Image">
         </div>
         <div class="image-row">
             <div class="larger-image">
