@@ -54,7 +54,7 @@
         }
         .larger-image {
             width: 100%; /* Make images take full width on mobile */
-            max-width: 300px; /* Maximum size for larger images */
+            max-width: 350px; /* Increased size for larger images */
             margin: 10px; /* Margin for spacing */
             position: relative; /* For the outline effect */
         }
@@ -63,18 +63,6 @@
             height: auto; /* Maintain aspect ratio */
             border-radius: 10px; /* Optional rounded corners */
         }
-        .larger-image::before {
-            content: '';
-            position: absolute;
-            top: -5px;
-            left: -5px;
-            right: -5px;
-            bottom: -5px;
-            border: 3px solid yellow; /* Yellow outline */
-            border-radius: 10px; /* Match rounded corners */
-            z-index: 1; /* Place the outline behind the image */
-            box-shadow: 0 0 30px yellow; /* Increased shining yellow outline */
-        }
         .bottom-images {
             display: flex;
             justify-content: space-between;
@@ -82,12 +70,10 @@
             margin-top: 20px; /* Space between text and bottom images */
         }
         .bottom-images img {
-            width: 40%; /* Smaller size for bottom images */
+            width: 30%; /* Decreased size for bottom images */
             height: auto;
             border-radius: 10px; /* Rounded corners */
-            position: relative; /* For stacking context */
             margin: 0; /* Remove margin for spacing */
-            box-shadow: 0 0 30px darkred; /* Increased shining dark red outline */
         }
         .bottom-images img:last-child {
             margin-right: 0; /* Remove margin from the last image */
