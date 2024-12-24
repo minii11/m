@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Banner</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: #3b8132; /* Dark Green */
+            color: white;
+        }
+        .banner {
+            background-color: #3b8132; /* Forest Green */
+            padding: 20px;
+            text-align: center;
+        }
+        .image-row {
+            display: flex;
+            justify-content: center;
+            gap: 20px; /* Space between images */
+            margin-bottom: 20px;
+            flex-wrap: wrap; /* Allow wrapping for mobile */
+        }
+        .image-container {
+            text-align: center; /* Center images */
+            flex: 1;
+            min-width: 150px; /* Minimum width for responsiveness */
+        }
+        .passport-image {
+            width: 120px; /* Increased size for passport images */
+            height: auto; /* Maintain aspect ratio */
+            margin-bottom: 10px; /* Space between passport and larger image */
+        }
+        .larger-image {
+            width: 180px; /* Size for larger images */
+            height: auto;
+            border-radius: 10px; /* Optional rounded corners */
+            position: relative; /* For the outline effect */
+        }
+        .larger-image::before {
+            content: '';
+            position: absolute;
+            top: -5px;
+            left: -5px;
+            right: -5px;
+            bottom: -5px;
+            border: 5px solid yellow; /* Yellow outline */
+            border-radius: 15px; /* Match border radius */
+            opacity: 0.6;
+            animation: shimmer 1.5s infinite; /* Shimmering effect */
+            z-index: 1; /* Place the outline behind the image */
+        }
+        .larger-image img {
+            border-radius: 10px; /* Ensure image corners are rounded */
+            position: relative; /* For stacking context */
+            z-index: 2; /* Place the image above the outline */
+        }
+        @keyframes shimmer {
+            0% { box-shadow: 0 0 0px yellow; }
+            50% { box-shadow: 0 0 8px yellow; }
+            100% { box-shadow: 0 0 0px yellow; }
+        }
+        .text-container {
+            color: yellow; /* Text color */
+            font-size: 32px; /* Larger font size */
+            font-weight: bold;
+            padding: 20px;
+            text-shadow: 0 0 20px white; /* Increased glow effect */
+            margin: 20px;
+            display: inline-block;
+        }
+        .bottom-images {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap; /* Allow wrapping for mobile */
+        }
+        .bottom-images img {
+            width: 45%; /* Adjust size as needed */
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="banner">
+        <div class="image-row">
+            <div class="image-container">
+                <img src="image10.jpg" alt="Passport Image 1" class="passport-image">
+            </div>
+            <div class="image-container">
+                <img src="image10.jpg" alt="Passport Image 2" class="passport-image">
+            </div>
+        </div>
+        <div class="image-row">
+            <div class="image-container larger-image">
+                <img src="image21.jpg" alt="Image 1">
+            </div>
+            <div class="image-container larger-image">
+                <img src="image41.jpg" alt="Image 2">
+            </div>
+        </div>
+        <img src="imageu.jpg" alt="Under Image" width="80%" style="margin: 20px auto; display: block;">
+        <div class="text-container">
+            کونسلر راحیل شفیق<br>
+            وارڈ 2 میونسپل کارپوریشن میرپور
+        </div>
+        <div class="bottom-images">
+            <img src="images.jpg" alt="Bottom Left Image">
+            <img src="imager.jpg" alt="Bottom Right Image">
+        </div>
+    </div>
+</body>
+</html>
