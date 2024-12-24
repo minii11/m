@@ -17,20 +17,20 @@
             text-align: center;
         }
         .passport-image {
-            width: 260px; /* Increased width for passport image */
-            height: 160px; /* Increased height for better visibility */
+            width: 260px; /* Width for passport image */
+            height: auto; /* Auto height for full visibility */
             margin: 0 auto 20px; /* Center with margin */
-            border-radius: 80px; /* Increased radius for oval shape */
             position: relative; /* For the outline effect */
-            overflow: hidden; /* Clip the image to the oval shape */
-            box-shadow: 0 0 25px white; /* Increased shining white outline */
+            box-shadow: 0 0 25px white; /* Shining white outline */
             z-index: 2; /* Ensure it's on top */
+            border-radius: 10px; /* Optional rounded corners */
+            overflow: hidden; /* Clip the image if needed */
         }
         .passport-image img {
             width: 100%; /* Make the image fill the container */
             height: auto; /* Maintain aspect ratio */
-            border-radius: 80px; /* Oval shape for the image itself */
             display: block; /* Remove extra space below the image */
+            border-radius: 10px; /* Match the border radius */
         }
         .under-image {
             width: 80%; /* Width of the under image */
