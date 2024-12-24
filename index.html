@@ -21,20 +21,22 @@
             height: 150px; /* Height for horizontal oval shape */
             margin: 20px auto; /* Center with margin */
             border-radius: 75px; /* Create an oval shape */
-            overflow: hidden; /* Clip the image to the oval shape */
             position: relative; /* For the outline effect */
+            overflow: hidden; /* Clip the image to the oval shape */
             box-shadow: 0 0 15px white; /* Shining white outline */
         }
         .passport-image img {
             width: 100%; /* Make the image fill the container */
             height: auto; /* Maintain aspect ratio */
             border-radius: 75px; /* Oval shape for the image itself */
+            display: block; /* Remove extra space below the image */
         }
         .under-image {
             width: 80%; /* Width of the under image */
             margin: 20px auto; /* Center image */
             border: 5px solid black; /* Black border for the under image */
             border-radius: 10px; /* Rounded corners */
+            box-shadow: 0 0 20px black; /* Shining black outline */
         }
         .text-container {
             color: yellow; /* Text color */
@@ -44,6 +46,35 @@
             text-shadow: 0 0 30px white; /* Enhanced glow effect */
             margin: 20px;
             display: inline-block;
+        }
+        .image-row {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+            flex-wrap: wrap; /* Allow wrapping for mobile */
+        }
+        .larger-image {
+            width: 50%; /* Responsive size for larger images */
+            max-width: 240px; /* Maximum size for larger images */
+            margin-left: 20px; /* Gap between images */
+            position: relative; /* For the outline effect */
+        }
+        .larger-image img {
+            width: 100%; /* Make the image fill the container */
+            height: auto; /* Maintain aspect ratio */
+            border-radius: 10px; /* Optional rounded corners */
+        }
+        .larger-image::before {
+            content: '';
+            position: absolute;
+            top: -5px;
+            left: -5px;
+            right: -5px;
+            bottom: -5px;
+            border: 3px solid yellow; /* Yellow outline */
+            border-radius: 10px; /* Match rounded corners */
+            z-index: 1; /* Place the outline behind the image */
+            box-shadow: 0 0 20px yellow; /* Shining yellow outline */
         }
         .bottom-images {
             display: flex;
@@ -58,33 +89,10 @@
             border-radius: 10px; /* Rounded corners */
             position: relative; /* For stacking context */
             margin-right: 10px; /* Gap between images */
+            box-shadow: 0 0 20px darkred; /* Shining dark red outline */
         }
         .bottom-images img:last-child {
             margin-right: 0; /* Remove margin from the last image */
-        }
-        .larger-image {
-            width: 50%; /* Responsive size for larger images */
-            max-width: 240px; /* Maximum size for larger images */
-            height: auto;
-            border-radius: 10px; /* Optional rounded corners */
-            position: relative; /* For the outline effect */
-        }
-        .larger-image img {
-            border-radius: 10px; /* Ensure image corners are rounded */
-            position: relative; /* For stacking context */
-            width: 100%; /* Make the image fill the container */
-            height: auto; /* Maintain aspect ratio */
-        }
-        .larger-image::before {
-            content: '';
-            position: absolute;
-            top: -5px;
-            left: -5px;
-            right: -5px;
-            bottom: -5px;
-            border: 3px solid yellow; /* Yellow outline */
-            border-radius: 10px; /* Match rounded corners */
-            z-index: 1; /* Place the outline behind the image */
         }
     </style>
 </head>
@@ -97,7 +105,7 @@
             <div class="larger-image">
                 <img src="image21.jpg" alt="Image 1">
             </div>
-            <div class="larger-image" style="margin-left: 20px;"> <!-- Added margin for gap -->
+            <div class="larger-image">
                 <img src="image41.jpg" alt="Image 2">
             </div>
         </div>
