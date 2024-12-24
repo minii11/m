@@ -32,6 +32,8 @@
             height: auto; /* Maintain aspect ratio */
             margin: 20px auto; /* Center with margin */
             position: relative; /* For the outline effect */
+            border-radius: 50%; /* Oval shape */
+            overflow: hidden; /* Clip the image to the oval shape */
         }
         .passport-image::before {
             content: '';
@@ -41,17 +43,15 @@
             right: -5px;
             bottom: -5px;
             border: 5px solid white; /* White outline */
-            border-radius: 15px; /* Match border radius */
+            border-radius: 50%; /* Oval shape */
             opacity: 0.8;
             animation: shimmer 1.5s infinite; /* Shimmering effect */
             z-index: 1; /* Place the outline behind the image */
         }
         .passport-image img {
-            border-radius: 10px; /* Ensure image corners are rounded */
-            position: relative; /* For stacking context */
-            z-index: 2; /* Place the image above the outline */
             width: 100%; /* Make the image fill the container */
             height: auto; /* Maintain aspect ratio */
+            border-radius: 50%; /* Oval shape for the image itself */
         }
         @keyframes shimmer {
             0% { box-shadow: 0 0 0px white; }
@@ -86,6 +86,10 @@
             border: 3px solid darkred; /* Dark red outline */
             border-radius: 10px; /* Rounded corners */
             position: relative; /* For stacking context */
+            margin-right: 10px; /* Gap between images */
+        }
+        .bottom-images img:last-child {
+            margin-right: 0; /* Remove margin from the last image */
         }
         .larger-image {
             width: 50%; /* Responsive size for larger images */
@@ -116,7 +120,7 @@
             <div class="image-container larger-image">
                 <img src="image21.jpg" alt="Image 1">
             </div>
-            <div class="image-container larger-image">
+            <div class="image-container larger-image" style="margin-left: 20px;"> <!-- Added margin for gap -->
                 <img src="image41.jpg" alt="Image 2">
             </div>
         </div>
