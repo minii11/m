@@ -50,7 +50,7 @@
             z-index: 3; /* Ensure text is above images */
         }
         .additional-text {
-            font-size: 24px; /* Smaller size for additional text */
+            font-size: 64px; /* Same size for all text */
             color: yellow; /* Original style */
             text-shadow: 0 0 30px white, 0 0 50px darkgreen; /* Glow effect */
         }
@@ -58,6 +58,7 @@
             display: flex;
             justify-content: center;
             margin-bottom: 20px;
+            position: relative; /* For positioning text */
         }
         .larger-image {
             width: 100%; /* Full width for mobile */
@@ -106,7 +107,7 @@
         <div class="passport-image">
             <img src="image10.jpg" alt="Passport Image">
         </div>
-        <div class="image-row" style="position: relative;">
+        <div class="image-row">
             <div class="larger-image">
                 <img src="image21.jpg" alt="Image 1">
             </div>
