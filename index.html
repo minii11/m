@@ -26,13 +26,13 @@
             text-align: center; /* Center images */
             flex: 1;
             min-width: 120px; /* Minimum width for responsiveness */
+            position: relative; /* For stacking context */
         }
         .passport-image {
-            width: 200px; /* Increased size for passport image */
-            height: auto; /* Maintain aspect ratio */
+            width: 250px; /* Width for passport image */
+            height: 150px; /* Height for horizontal oval shape */
             margin: 20px auto; /* Center with margin */
-            position: relative; /* For the outline effect */
-            border-radius: 50%; /* Oval shape */
+            border-radius: 75px; /* Create an oval shape */
             overflow: hidden; /* Clip the image to the oval shape */
         }
         .passport-image::before {
@@ -43,7 +43,7 @@
             right: -5px;
             bottom: -5px;
             border: 5px solid white; /* White outline */
-            border-radius: 50%; /* Oval shape */
+            border-radius: 75px; /* Match oval shape */
             opacity: 0.8;
             animation: shimmer 1.5s infinite; /* Shimmering effect */
             z-index: 1; /* Place the outline behind the image */
@@ -51,7 +51,7 @@
         .passport-image img {
             width: 100%; /* Make the image fill the container */
             height: auto; /* Maintain aspect ratio */
-            border-radius: 50%; /* Oval shape for the image itself */
+            border-radius: 75px; /* Oval shape for the image itself */
         }
         @keyframes shimmer {
             0% { box-shadow: 0 0 0px white; }
@@ -63,7 +63,6 @@
             margin: 20px auto; /* Center image */
             border: 5px solid black; /* Black border for the under image */
             border-radius: 10px; /* Rounded corners */
-            position: relative; /* For stacking context */
         }
         .text-container {
             color: yellow; /* Text color */
@@ -104,6 +103,17 @@
             z-index: 2; /* Place the image above the outline */
             width: 100%; /* Make the image fill the container */
             height: auto; /* Maintain aspect ratio */
+        }
+        .larger-image::before {
+            content: '';
+            position: absolute;
+            top: -5px;
+            left: -5px;
+            right: -5px;
+            bottom: -5px;
+            border: 3px solid yellow; /* Yellow outline */
+            border-radius: 10px; /* Match rounded corners */
+            z-index: 1; /* Place the outline behind the image */
         }
     </style>
 </head>
