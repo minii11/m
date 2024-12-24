@@ -39,7 +39,7 @@
         }
         .text-container {
             color: yellow; /* Text color */
-            font-size: 48px; /* Increased font size */
+            font-size: 56px; /* Increased font size for prominence */
             font-weight: bold;
             padding: 20px;
             text-shadow: 0 0 30px white, 0 0 50px darkgreen; /* Enhanced glow effect with dark green */
@@ -63,6 +63,18 @@
             height: auto; /* Maintain aspect ratio */
             border-radius: 10px; /* Optional rounded corners */
         }
+        .larger-image::before {
+            content: '';
+            position: absolute;
+            top: -5px;
+            left: -5px;
+            right: -5px;
+            bottom: -5px;
+            border: 3px solid yellow; /* Yellow outline retained */
+            border-radius: 10px; /* Match rounded corners */
+            z-index: 1; /* Place the outline behind the image */
+            box-shadow: 0 0 30px yellow; /* Increased shining yellow outline */
+        }
         .bottom-images {
             display: flex;
             justify-content: space-between;
@@ -70,10 +82,11 @@
             margin-top: 20px; /* Space between text and bottom images */
         }
         .bottom-images img {
-            width: 30%; /* Decreased size for bottom images */
+            width: 20%; /* Further decreased size for bottom images */
             height: auto;
             border-radius: 10px; /* Rounded corners */
             margin: 0; /* Remove margin for spacing */
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); /* Special shadow effect to emerge */
         }
         .bottom-images img:last-child {
             margin-right: 0; /* Remove margin from the last image */
