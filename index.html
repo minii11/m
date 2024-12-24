@@ -3,122 +3,96 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Responsive Banner</title>
+    <title>Vibrant Glow Button</title>
     <style>
         body {
-            margin: 0;
             font-family: 'Arial', sans-serif;
-            background-color: #3b8132; /* Dark Green */
+            background-color: #2a2a2a; /* Dark background */
             color: white;
-        }
-        .banner {
-            background-color: #3b8132; /* Forest Green */
-            padding: 20px;
             text-align: center;
-        }
-        .passport-image {
-            width: 260px; /* Width for passport image */
-            height: auto; /* Auto height for full visibility */
-            margin: 0 auto 20px; /* Center with margin */
-            position: relative; /* For the outline effect */
-            box-shadow: 0 0 25px white; /* Shining white outline */
-            z-index: 2; /* Ensure it's on top */
-            border-radius: 10px; /* Optional rounded corners */
-            overflow: hidden; /* Clip the image if needed */
-        }
-        .passport-image img {
-            width: 100%; /* Make the image fill the container */
-            height: auto; /* Maintain aspect ratio */
-            display: block; /* Remove extra space below the image */
-            border-radius: 10px; /* Match the border radius */
-        }
-        .under-image {
-            width: 80%; /* Width of the under image */
-            margin: 20px auto; /* Center image */
-            border: 5px solid black; /* Black border for the under image */
-            border-radius: 10px; /* Rounded corners */
-            box-shadow: 0 0 30px black; /* Increased shining black outline */
-        }
-        .text-container {
-            color: yellow; /* Text color */
-            font-size: 40px; /* Increased font size */
-            font-weight: bold;
             padding: 20px;
-            text-shadow: 0 0 30px white; /* Enhanced glow effect */
-            margin: 20px;
-            display: inline-block;
         }
-        .image-row {
-            display: flex;
-            justify-content: center;
-            margin-bottom: 20px;
-            flex-wrap: wrap; /* Allow wrapping for mobile */
+        button {
+            position: relative;
+            padding: 15px 30px;
+            font-size: 20px;
+            color: white;
+            background: #3b8132; /* Solid background */
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            overflow: hidden;
+            outline: none;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.5), /* Soft white glow */
+                        0 0 20px rgba(255, 255, 255, 0.3), /* Medium white glow */
+                        0 0 30px rgba(255, 255, 255, 0.2); /* Strong white glow */
         }
-        .larger-image {
-            width: 50%; /* Responsive size for larger images */
-            max-width: 240px; /* Maximum size for larger images */
-            margin-left: 20px; /* Added margin for gap */
-            position: relative; /* For the outline effect */
-        }
-        .larger-image img {
-            width: 100%; /* Make the image fill the container */
-            height: auto; /* Maintain aspect ratio */
-            border-radius: 10px; /* Optional rounded corners */
-        }
-        .larger-image::before {
-            content: '';
+        .shimmer {
             position: absolute;
-            top: -5px;
-            left: -5px;
-            right: -5px;
-            bottom: -5px;
-            border: 3px solid yellow; /* Yellow outline */
-            border-radius: 10px; /* Match rounded corners */
-            z-index: 1; /* Place the outline behind the image */
-            box-shadow: 0 0 30px yellow; /* Increased shining yellow outline */
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border-radius: 5px;
+            background: radial-gradient(circle at top left, rgba(255, 255, 255, 0.8), transparent 70%),
+                        radial-gradient(circle at bottom right, rgba(255, 255, 255, 0.8), transparent 70%);
+            opacity: 0;
+            transition: opacity 0.3s;
         }
-        .bottom-images {
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap; /* Allow wrapping for mobile */
-            margin-top: 20px; /* Space between text and bottom images */
+        button:hover .shimmer {
+            opacity: 1;
+            animation: flicker 1.5s infinite alternate;
         }
-        .bottom-images img {
-            width: 45%; /* Adjust size as needed */
-            height: auto;
-            border: 3px solid darkred; /* Dark red outline */
-            border-radius: 10px; /* Rounded corners */
-            position: relative; /* For stacking context */
-            margin-right: 10px; /* Gap between images */
-            box-shadow: 0 0 30px darkred; /* Increased shining dark red outline */
+        @keyframes flicker {
+            0% { opacity: 0.8; }
+            50% { opacity: 1; }
+            100% { opacity: 0.8; }
         }
-        .bottom-images img:last-child {
-            margin-right: 0; /* Remove margin from the last image */
+        .selection {
+            margin: 20px 0;
+        }
+        .social-icon {
+            margin: 5px;
+            fill: white;
+            width: 24px;
+            height: 24px;
         }
     </style>
 </head>
 <body>
-    <div class="banner">
-        <div class="passport-image">
-            <img src="image10.jpg" alt="Passport Image">
-        </div>
-        <div class="image-row">
-            <div class="larger-image" style="margin-right: 20px;"> <!-- Added margin for gap -->
-                <img src="image21.jpg" alt="Image 1">
-            </div>
-            <div class="larger-image">
-                <img src="image41.jpg" alt="Image 2">
-            </div>
-        </div>
-        <img src="imageu.jpg" alt="Under Image" class="under-image">
-        <div class="text-container">
-            کونسلر راحیل شفیق<br>
-            وارڈ 2 میونسپل کارپوریشن میرپور
-        </div>
-        <div class="bottom-images">
-            <img src="images.jpg" alt="Bottom Left Image">
-            <img src="imager.jpg" alt="Bottom Right Image">
-        </div>
-    </div>
+    <main id="app" class="dark">
+        <button>
+            <span class="text">Hover me, and change the effect below!</span>
+            <span class="shimmer"></span>
+        </button>
+
+        <section class="selection">
+            <label><input type="radio" name="style" value="spin"> spin</label>
+            <label><input type="radio" name="style" value="wipe"> wipe</label>
+            <label><input type="radio" name="style" value="flicker" checked=""> flicker</label>
+            <label><input type="radio" name="style" value="wave"> wave</label>
+            <label><input type="radio" name="style" value="throb"> throb</label>
+            <label><input type="radio" name="style" value="pulse"> pulse</label>
+        </section>
+        
+        <p>Based on <a href="https://codepen.io/simeydotme/pen/GRzVKqr" target="_blank">this previous Pen</a></p>
+    </main>
+
+    <a class="social-icon codepen" href="https://codepen.io/simeydotme" title="view my codepens">
+        Made by Simey
+    </a>
+
+    <a class="social-icon twitter" href="https://twitter.com/simeydotme">
+        <svg viewBox="0 0 24 24">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            <path d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c-.002 -.249 1.51 -2.772 1.818 -4.013z"></path>
+        </svg>
+    </a>
+    <a class="social-icon github" href="https://github.com/simeydotme">
+        <svg viewBox="0 0 24 24">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5"></path>
+        </svg>
+    </a>
 </body>
 </html>
