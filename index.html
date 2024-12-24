@@ -33,19 +33,22 @@
         .passport-image::before {
             content: '';
             position: absolute;
-            top: -3px; /* Smaller distance for the outline */
-            left: -3px; /* Smaller distance for the outline */
-            right: -3px; /* Smaller distance for the outline */
-            bottom: -3px; /* Smaller distance for the outline */
-            border: 3px solid white; /* White outline */
+            top: -5px; /* White outline */
+            left: -5px; /* White outline */
+            right: -5px; /* White outline */
+            bottom: -5px; /* White outline */
+            border: 5px solid white; /* White outline */
             border-radius: 75px; /* Match oval shape */
             opacity: 0.8;
             animation: shimmer 1.5s infinite; /* Shimmering effect */
+            z-index: 1; /* Place the outline behind the image */
         }
         .passport-image img {
             width: 100%; /* Make the image fill the container */
             height: auto; /* Maintain aspect ratio */
             border-radius: 75px; /* Oval shape for the image itself */
+            position: relative; /* Ensure image is above the outline */
+            z-index: 2; /* Place the image above the outline */
         }
         @keyframes shimmer {
             0% { box-shadow: 0 0 0px white; }
@@ -119,10 +122,10 @@
             </div>
         </div>
         <div class="image-row">
-            <div class="image-container larger-image">
+            <div class="larger-image">
                 <img src="image21.jpg" alt="Image 1">
             </div>
-            <div class="image-container larger-image" style="margin-left: 20px;"> <!-- Added margin for gap -->
+            <div class="larger-image" style="margin-left: 20px;"> <!-- Added margin for gap -->
                 <img src="image41.jpg" alt="Image 2">
             </div>
         </div>
