@@ -22,31 +22,25 @@
             margin-bottom: 20px;
             flex-wrap: wrap; /* Allow wrapping for mobile */
         }
-        .image-container {
-            text-align: center; /* Center images */
-            flex: 1;
-            min-width: 120px; /* Minimum width for responsiveness */
-            position: relative; /* For stacking context */
-        }
         .passport-image {
             width: 250px; /* Width for passport image */
             height: 150px; /* Height for horizontal oval shape */
             margin: 20px auto; /* Center with margin */
             border-radius: 75px; /* Create an oval shape */
             overflow: hidden; /* Clip the image to the oval shape */
+            position: relative; /* For the outline effect */
         }
         .passport-image::before {
             content: '';
             position: absolute;
-            top: -5px;
-            left: -5px;
-            right: -5px;
-            bottom: -5px;
-            border: 5px solid white; /* White outline */
+            top: -3px; /* Smaller distance for the outline */
+            left: -3px; /* Smaller distance for the outline */
+            right: -3px; /* Smaller distance for the outline */
+            bottom: -3px; /* Smaller distance for the outline */
+            border: 3px solid white; /* White outline */
             border-radius: 75px; /* Match oval shape */
             opacity: 0.8;
             animation: shimmer 1.5s infinite; /* Shimmering effect */
-            z-index: 1; /* Place the outline behind the image */
         }
         .passport-image img {
             width: 100%; /* Make the image fill the container */
@@ -120,10 +114,8 @@
 <body>
     <div class="banner">
         <div class="image-row">
-            <div class="image-container">
-                <div class="passport-image">
-                    <img src="image10.jpg" alt="Passport Image">
-                </div>
+            <div class="passport-image">
+                <img src="image10.jpg" alt="Passport Image">
             </div>
         </div>
         <div class="image-row">
