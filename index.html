@@ -15,6 +15,7 @@
             background-color: #3b8132; /* Forest Green */
             padding: 20px;
             text-align: center;
+            position: relative; /* For absolute positioning of text */
         }
         .passport-image {
             width: 180px; /* Width for passport image */
@@ -38,11 +39,15 @@
             box-shadow: 0 0 30px black; /* Increased shining black outline */
         }
         .text-container {
-            font-size: 48px; /* Increased font size for prominence */
+            font-size: 64px; /* Increased font size for prominence */
             font-weight: bold;
             color: white; /* Text color */
             text-shadow: 2px 2px 0 black; /* Black outline effect */
-            margin: 10px 0; /* Small margin for spacing */
+            position: absolute; /* Position text between images */
+            top: 50%; /* Center vertically */
+            left: 50%; /* Center horizontally */
+            transform: translate(-50%, -50%); /* Adjust for perfect centering */
+            z-index: 3; /* Ensure text is above images */
         }
         .additional-text {
             font-size: 24px; /* Smaller size for additional text */
@@ -53,11 +58,10 @@
             display: flex;
             justify-content: center;
             margin-bottom: 20px;
-            flex-wrap: wrap; /* Allow wrapping for mobile */
         }
         .larger-image {
-            width: 100%; /* Make images take full width on mobile */
-            max-width: 350px; /* Increased size for larger images */
+            width: 100%; /* Full width for mobile */
+            max-width: 900px; /* Increased size for larger images */
             margin: 10px; /* Margin for spacing */
             position: relative; /* For the outline effect */
         }
@@ -86,7 +90,7 @@
             position: relative; /* For positioning text */
         }
         .bottom-images img {
-            width: 20%; /* Further decreased size for bottom images */
+            width: 30%; /* Increased size for bottom images */
             height: auto;
             border-radius: 10px; /* Rounded corners */
             margin: 0; /* Remove margin for spacing */
@@ -102,20 +106,20 @@
         <div class="passport-image">
             <img src="image10.jpg" alt="Passport Image">
         </div>
-        <div class="image-row">
-            <div class="larger-image" style="margin-right: 20px;"> <!-- Yellow outline retained -->
+        <div class="image-row" style="position: relative;">
+            <div class="larger-image">
                 <img src="image21.jpg" alt="Image 1">
             </div>
+            <div class="text-container">کونسلر راحیل شفیق</div> <!-- Prominent text positioned in the middle -->
             <div class="larger-image">
                 <img src="image41.jpg" alt="Image 2">
             </div>
         </div>
-        <img src="imageu.jpg" alt="Under Image" class="under-image">
+        <img src="imageu.jpg" alt="Under Image" class="under-image" style="max-width: 900px;">
         <div class="bottom-images">
             <img src="images.jpg" alt="Bottom Left Image">
             <img src="imager.jpg" alt="Bottom Right Image">
         </div>
-        <div class="text-container">کونسلر راحیل شفیق</div> <!-- Prominent text -->
         <div class="additional-text">وارڈ 2 میونسپل کارپوریشن میرپور</div> <!-- Styled additional text -->
     </div>
 </body>
